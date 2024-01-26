@@ -59,11 +59,80 @@ export default defineConfig({
                     link: '/ondernemers/lampen-en-batterijen/'
                 }
             ]
-        }, {
-            label: 'Reference',
-            autogenerate: {
-                directory: 'reference'
-            }
-        }]
+        },
+
+            {
+                label: 'Producten - Aansluitmateriaal',
+                autogenerate: {
+                    directory: 'producten/aansluitmateriaal'
+                }
+            },
+            {
+                label: 'Producten - Batterijen',
+                autogenerate: {
+                    directory: 'producten/batterijen'
+                }
+            },
+            {
+                label: 'Producten - Gas',
+                autogenerate: {
+                    directory: 'producten/gas'
+                }
+            },
+            {
+                label: 'Producten - Lampen',
+                autogenerate: {
+                    directory: 'producten/lampen'
+                }
+            },
+            {
+                label: 'Producten - Lucht',
+                autogenerate: {
+                    directory: 'producten/lucht'
+                }
+            },
+            {
+                label: 'Producten - Onderhoud',
+                autogenerate: {
+                    directory: 'producten/onderhoud'
+                }
+            },
+            {
+                label: 'Producten - Reparatie Onderdelen',
+                autogenerate: {
+                    directory: 'producten/reparatie-onderdelen'
+                }
+            },
+            {
+                label: 'Producten - Stofzuigeraccessoires',
+                autogenerate: {
+                    directory: 'producten/stofzuigeraccessoires'
+                }
+            },
+            {
+                label: 'Producten - Stofzuiger Origineel',
+                autogenerate: {
+                    directory: 'producten/stofzuiger-origineel'
+                }
+            },
+            {
+                label: 'Producten - Stofzuiger Universeel',
+                autogenerate: {
+                    directory: 'producten/stofzuiger-universeel'
+                }
+            },
+            {
+                label: 'Producten - Stofzuigerzakken',
+                autogenerate: {
+                    directory: 'producten/stofzuigerzakken'
+                }
+            },
+            {
+                label: 'Producten - Water',
+                autogenerate: {
+                    directory: 'producten/water'
+                }
+            },
+        ]
     }), tailwind()]
 });
