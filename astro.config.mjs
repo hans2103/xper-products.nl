@@ -28,6 +28,27 @@ export default defineConfig({
                         "'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n" +
                         "})(window,document,'script','dataLayer','GTM-M3SNQV4W');",
                 },
+                {
+                    tag: 'script',
+                    content:
+                        "window.dataLayer = window.dataLayer || [];\n" +
+                        "function gtag() {\n" +
+                        "    dataLayer.push(arguments);\n" +
+                        "}\n" +
+                        "if (localStorage.getItem('consentMode') === null) {\n" +
+                        "    gtag('consent', 'default', {\n" +
+                        "        'ad_storage': 'denied',\n" +
+                        "        'ad_user_data': 'denied',\n" +
+                        "        'ad_personalization': 'denied',\n" +
+                        "        'analytics_storage': 'granted',\n" +
+                        "        'personalization_storage': 'granted',\n" +
+                        "        'functionality_storage': 'granted',\n" +
+                        "        'security_storage': 'granted',\n" +
+                        "    });\n" +
+                        "} else {\n" +
+                        "    gtag('consent', 'default', JSON.parse(localStorage.getItem('consentMode')));\n" +
+                        "}",
+                }
             ],
             // Replace the built-in <SkipLink/> component.
             components: {
