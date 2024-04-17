@@ -1,3 +1,19 @@
+# XPerProducts
+
+# MarkDown
+uitleg over codes die je voor opmaak kunenn
+https://www.markdownguide.org/basic-syntax/
+
+## Linkje maken
+
+Onderstaande link wordt gemaakt met de code die daar weer onder staat.
+
+[aanklikbare tekst van de link](https://example.com)
+
+```
+[aanklikbare tekst van de link](https://example.com)
+```
+
 # Starlight Starter Kit: Basics
 
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
