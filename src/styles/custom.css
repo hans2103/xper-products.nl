@@ -1,0 +1,27 @@
+.sl-markdown-content {
+    [href*="onderdelenexpert.nl"] {
+        display: inline-flex;
+        gap: 0.5em;
+        align-items: center;
+        border-radius: 999rem;
+        padding: 0.5rem 1.125rem;
+
+        line-height: 1.1875;
+        text-decoration: none;
+        font-size: var(--sl-text-sm);
+        font-weight: 600;
+        color: var(--sl-color-text-invert);
+        background: var(--sl-color-blue);
+
+        &:hover,
+        &:focus {
+            color: var(--sl-color-text-invert);
+            background: var(--sl-color-blue);
+        }
+
+        @media (min-width: 50rem) {
+            font-size: var(--sl-text-base);
+            padding: 1rem 1.25rem;
+        }
+    }
+}

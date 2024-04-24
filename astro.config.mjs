@@ -16,6 +16,9 @@ export default defineConfig({
         sitemap(),
         starlight({
             title: 'Xpèr Products',
+            customCss: [
+                './src/styles/custom.css'
+            ],
             // Add a script for Google Tag Manager.
             head: [
                 {
