@@ -110,6 +110,12 @@ export default defineConfig({
                     }
                 },
                 {
+                    label: 'Producten - Electra',
+                    autogenerate: {
+                        directory: 'producten/electra'
+                    }
+                },
+                {
                     label: 'Producten - Gas',
                     autogenerate: {
                         directory: 'producten/gas'
