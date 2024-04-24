@@ -99,10 +99,6 @@ export default defineConfig({
                     {
                         label: 'Stofzuiger origineel',
                         link: '/ondernemers/stofzuiger-origineel/'
-                    },
-                    {
-                        label: 'Lampen en batterijen',
-                        link: '/ondernemers/lampen-en-batterijen/'
                     }
                 ]
             },
@@ -114,21 +110,9 @@ export default defineConfig({
                     }
                 },
                 {
-                    label: 'Producten - Batterijen',
-                    autogenerate: {
-                        directory: 'producten/batterijen'
-                    }
-                },
-                {
                     label: 'Producten - Gas',
                     autogenerate: {
                         directory: 'producten/gas'
-                    }
-                },
-                {
-                    label: 'Producten - Lampen',
-                    autogenerate: {
-                        directory: 'producten/lampen'
                     }
                 },
                 {
