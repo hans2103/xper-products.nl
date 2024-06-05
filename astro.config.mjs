@@ -1,8 +1,8 @@
 import {defineConfig} from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
-
 import tailwind from "@astrojs/tailwind";
+import basicSsl from '@vitejs/plugin-basic-ssl'
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +12,12 @@ export default defineConfig({
         showDefaultLocale: true
     },
     site: 'https://xper-products.nl',
+    vite: {
+        plugins: [basicSsl()],
+        server: {
+            https: true,
+        },
+    },
     integrations: [
         sitemap(),
         starlight({
