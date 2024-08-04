@@ -6,11 +6,6 @@ import basicSsl from '@vitejs/plugin-basic-ssl'
 
 // https://astro.build/config
 export default defineConfig({
-    i18n: {
-        defaultLocale: 'nl',
-        locales: ['nl'],
-        showDefaultLocale: true
-    },
     site: 'https://xper-products.nl',
     vite: {
         plugins: [basicSsl()],
