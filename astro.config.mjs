@@ -2,20 +2,16 @@ import {defineConfig} from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import starlight from '@astrojs/starlight';
 import tailwind from "@astrojs/tailwind";
-import fs from 'fs';
-//import basicSsl from '@vitejs/plugin-basic-ssl'
+import basicSsl from '@vitejs/plugin-basic-ssl'
 
 // https://astro.build/config
 export default defineConfig({
     site: 'https://xper-products.nl',
     server: {
-        https: {
-            key: fs.readFileSync('./localhost-key.pem'),
-            cert: fs.readFileSync('./localhost.pem'),
-        }
+        https: true,
     },
     vite: {
-        plugins: []
+        plugins: [basicSsl()]
     },
     integrations: [
         sitemap(),
