@@ -1,3 +1,6 @@
+@import "tailwindcss";
+
+
 .sl-markdown-content [href*="onderdelenexpert.nl"] {
     display: inline-flex;
     gap: 0.5em;
