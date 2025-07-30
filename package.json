@@ -1,7 +1,7 @@
 {
   "name": "xper-products",
   "type": "module",
-  "version": "25.12.1",
+  "version": "25.31.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
