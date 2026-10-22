@@ -68,11 +68,11 @@ export default defineConfig({
                 sidebar: [
                     {
                         label: 'Ondernemers',
-                        autogenerate: {directory: 'ondernemers'},
+                        items: [{autogenerate: {directory: 'ondernemers'}}],
                     },
                     {
                         label: 'Producten',
-                        autogenerate: {directory: 'producten'},
+                        items: [{autogenerate: {directory: 'producten'}}],
                     },
                 ],
             }
