@@ -41,6 +41,11 @@
       "source": "/producten/stofzuiger-origineel/miele-filter-aktief-koolfilter-sf-aac30/",
       "destination": "/producten/stofzuiger-origineel/miele-hepa-filter-sf-ha30/",
       "permanent": true
+    },
+    {
+      "source": "/producten/lucht/zos-hoekstuk-eco-220x90mm-horizontaal-150/",
+      "destination": "/producten/lucht/zos-hoekstuk-eco-220x90mm-horizontaal-15o/",
+      "permanent": true
     }
   ],
   "headers": [
