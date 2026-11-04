@@ -46,9 +46,12 @@ const productLd = {
   ...(brand && { brand: { '@type': 'Brand', name: brand } }),
   manufacturer: { '@id': `${site.url}/#organization` },
 };
+const withTitle = `${title} (${sku}). ${description}`;
 const metaDescription = description.toLowerCase().startsWith(title.toLowerCase().slice(0, 12))
   ? description
-  : `${title} (${sku}). ${description}`.slice(0, 158).replace(/\s\S*$/, '…');
+  : withTitle.length <= 158
+    ? withTitle
+    : withTitle.slice(0, 158).replace(/\s\S*$/, '…');
 ---
 <Base title={title} description={metaDescription} image={image} imageAlt={alt} type="product" breadcrumbs={crumbs} jsonLd={[productLd]}>
   <div class="wrap">
