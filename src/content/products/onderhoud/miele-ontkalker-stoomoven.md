@@ -6,6 +6,8 @@ description: "Ons ontkalkingsmiddel voor hogedrukstoomovens, in handige 1-literv
 image: "../../../assets/products/360-000-1439.jpg"
 imageAlt: "Doorzichtige fles met rode ontkalkervloeistof en rode schroefdop"
 orderUrl: "https://www.onderdelenexpert.nl/miele-ontkalker-1-liter-hogedruk-stoomoven-10265450"
+# Niet meer leverbaar: uitgeschakeld in de webshop van onderdelenexpert.nl (2026-11-04, #13).
+active: false
 ---
 
 Ons ontkalkingsmiddel voor hogedrukstoomovens, in handige 1-literverpakking, biedt een effectieve oplossing voor kalkaanslag. Aanbevolen voor Miele-apparaten, garandeert het een optimale werking zonder schade. Dankzij de perfecte afstemming op Miele-programma's behoudt uw kostbare apparatuur zijn kwaliteit. Kies voor zorgeloos onderhoud en bestel nu!

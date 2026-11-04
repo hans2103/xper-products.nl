@@ -1,13 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
+import { getProducts } from '../lib/products';
 import Base from '../layouts/Base.astro';
 import ProductTag from '../components/ProductTag.astro';
 import CategoryList from '../components/CategoryList.astro';
 import { site, lowestRackPrice } from '../config/site';
 import rack from '../assets/ondernemers/shop_electra.jpg';
 
-const products = await getCollection('products');
+const products = await getProducts();
 const racks = (await getCollection('racks')).sort((a, b) => a.data.order - b.data.order);
 const minPrice = lowestRackPrice(racks);
 const picks = ['gas/zos-gasslang-80cm-compleet', 'onderhoud/wpro-ontkalker-wasmachine-250gr', 'stofzuigerzakken/menalux-bsh-type-k', 'electra/zos-overspanningsbeveiliging']

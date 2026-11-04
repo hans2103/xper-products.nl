@@ -6,6 +6,8 @@ description: "Bij het Eco+ ventilatiekanalen-systeem zijn de kanalen en hulpstuk
 image: "../../../assets/products/400-300-0051.jpg"
 imageAlt: "Korte witte rechthoekige kunststof verbinder voor luchtkanaal, los product"
 orderUrl: "https://www.onderdelenexpert.nl/zos-buisverbinder-220x90mm-eco-6320"
+# Niet meer leverbaar: verwijderd uit de webshop van onderdelenexpert.nl (2026-11-04, #13).
+active: false
 ---
 
 Bij het Eco+ ventilatiekanalen-systeem zijn de kanalen en hulpstukken voorzien van lamellen,

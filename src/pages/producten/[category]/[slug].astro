@@ -1,13 +1,14 @@
 ---
 import type { GetStaticPaths } from 'astro';
 import { Image, getImage } from 'astro:assets';
-import { getCollection, render, type CollectionEntry } from 'astro:content';
+import { render, type CollectionEntry } from 'astro:content';
+import { getProducts } from '../../../lib/products';
 import Base from '../../../layouts/Base.astro';
 import ProductTag from '../../../components/ProductTag.astro';
 import { categories, site } from '../../../config/site';
 
 export const getStaticPaths = (async () => {
-  const products = await getCollection('products');
+  const products = await getProducts();
   return products.map((product) => {
     const [category, slug] = product.id.split('/');
     return { params: { category, slug }, props: { product } };
@@ -22,7 +23,7 @@ const { Content } = await render(product);
 const { label } = categories[category];
 const alt = imageAlt ?? `${title}, artikelnummer ${sku}`;
 
-const related = (await getCollection('products', (p) => p.id.startsWith(`${category}/`) && p.id !== product.id))
+const related = (await getProducts((p) => p.id.startsWith(`${category}/`) && p.id !== product.id))
   .sort((a, b) => Number(b.data.brand === brand) - Number(a.data.brand === brand) || a.data.title.localeCompare(b.data.title, 'nl'))
   .slice(0, 4);
 

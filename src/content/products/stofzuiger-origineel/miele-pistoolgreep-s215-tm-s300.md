@@ -6,6 +6,8 @@ description: "Upgrade je Miele stofzuiger met onze ergonomische pistoolgreep voo
 image: "../../../assets/products/141-360-0187.jpg"
 imageAlt: "Zwarte gebogen kunststof handgreep met klemknop en brede aansluiting"
 orderUrl: "https://www.onderdelenexpert.nl/miele-pistoolgreep-s215-t-m-s300-stofzuiger-3565460"
+# Niet meer leverbaar: uitgeschakeld in de webshop van onderdelenexpert.nl (2026-11-04, #13).
+active: false
 ---
 
 Upgrade je Miele stofzuiger met onze ergonomische pistoolgreep voor een comfortabele en krachtige reiniging. Ontworpen voor optimale grip en gebruiksgemak, biedt deze greep een naadloze ervaring bij het schoonmaken. Transformeer je stofzuigerroutine en geniet van moeiteloos manoeuvreren. Bestel nu voor een verbeterde reinigingservaring!
