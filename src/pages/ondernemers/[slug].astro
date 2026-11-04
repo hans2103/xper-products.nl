@@ -1,0 +1,38 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { Image } from 'astro:assets';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { site, rackFacts } from '../../config/site';
+
+export const getStaticPaths = (async () =>
+  (await getCollection('racks')).map((rack) => ({ params: { slug: rack.id }, props: { rack } }))) satisfies GetStaticPaths;
+
+interface Props { rack: CollectionEntry<'racks'> }
+const { rack } = Astro.props;
+const { title, summary, price, productCount, image } = rack.data;
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Voor winkeliers', href: '/ondernemers/' }, { label: title, href: `/ondernemers/${rack.id}/` }];
+const alt = `Het Xpèr-schap ${title.toLowerCase()}${productCount ? ` met ${productCount} producten` : ''}`;
+---
+<Base title={`Schap ${title.toLowerCase()}`} description={`Xpèr-schap ${title.toLowerCase()}: ${summary} ${rackFacts(rack.data)}, stelling in bruikleen.`} image={image} imageAlt={alt} breadcrumbs={crumbs}>
+  <div class="wrap">
+    <div class="split section" style="padding-top: 1.5rem">
+      <figure class="product__media" style="margin: 0">
+        <Image src={image} alt={alt} widths={[360, 560, 760]} sizes="(min-width: 76rem) 560px, (min-width: 52rem) 45vw, 92vw" format="webp" quality={65} loading="eager" fetchpriority="high" />
+      </figure>
+      <div>
+        <h1 style="font-size: var(--step-2)">Schap {title.toLowerCase()}</h1>
+        <p class="lead">{summary}</p>
+        <dl class="specs">
+          <dt>Richtprijs</dt><dd>{price ? `€ ${price},-` : 'Op aanvraag'}</dd>
+          {productCount && <><dt>Aantal producten</dt><dd>{productCount}</dd></>}
+          <dt>Afmeting</dt><dd>255 × 100 × 37 cm</dd>
+          <dt>Stelling</dt><dd>In overleg in bruikleen</dd>
+        </dl>
+        <p>Dit is een voorbeeldindeling zoals wij die adviseren. In overleg maken we een schap op maat voor uw winkel.</p>
+        <a class="button button--primary" href={`mailto:${site.company.email}?subject=${encodeURIComponent(`Interesse in schap ${title}`)}`}>Vraag dit schap aan</a>
+        <p style="margin-top: 1.5rem"><a href="/ondernemers/">Bekijk alle schappen</a></p>
+      </div>
+    </div>
+  </div>
+</Base>

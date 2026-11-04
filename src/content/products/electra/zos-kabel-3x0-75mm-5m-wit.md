@@ -1,0 +1,11 @@
+---
+title: "ZOS Kabel 3x0.75MM 5M Wit"
+sku: "400-400-0200"
+brand: "ZOS"
+description: "Ontdek de ultieme veelzijdigheid met ons witte 3 x 0.75mm kabelsnoer."
+image: "../../../assets/products/400-400-0200.jpg"
+imageAlt: "Opgerolde witte ronde kabel in Xpèr-ophangverpakking"
+orderUrl: "https://www.onderdelenexpert.nl/zos-kabel-3x0-75mm-5m-wit-0300515"
+---
+
+Ontdek de ultieme veelzijdigheid met ons witte 3 x 0.75mm kabelsnoer. Met een lengte van 5 meter biedt dit snoer ongeëvenaarde flexibiliteit en betrouwbaarheid voor al je elektrische behoeften. Krijg nu de perfecte verbinding voor elk project, of het nu thuis, op kantoor of elders is. Bestel vandaag nog!

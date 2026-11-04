@@ -1,0 +1,11 @@
+---
+title: "Bosch Afvoerpomp Los Bajonet Askol"
+sku: "510-185-0102"
+brand: "Bosch"
+description: "Verbeter de prestaties van je Bosch en Siemens wasmachine met de juiste afvoerpomp."
+image: "../../../assets/products/510-185-0102.jpg"
+imageAlt: "Grijze afvoerpomp met rond pomphuis en waaier, los product"
+orderUrl: "https://www.onderdelenexpert.nl/bosch-afvoerpomp-los-bajonet-askol-wasmachine-00144340"
+---
+
+Verbeter de prestaties van je Bosch en Siemens wasmachine met de juiste afvoerpomp. Let op: bij Siemens apparaten past deze mogelijk niet altijd op het filterhuis. Verschillende modellen zijn door de jaren heen gewijzigd. Vervang de complete pomp met pomphuis indien nodig. Beschikbaar in type: 00564350 of 00564352. Compatibel met modellen zoals de WXB Serie en WM54850NL. Raadpleeg je lokale vakhandelaar voor het juiste onderdeel voor jouw apparaat. Check waar te koop en zorg dat je je model- en productcode bij de hand hebt.

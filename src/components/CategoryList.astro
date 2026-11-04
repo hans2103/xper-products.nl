@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import { categories } from '../config/site';
+
+const products = (await getCollection('products')).sort((a, b) => a.id.localeCompare(b.id));
+const items = Object.entries(categories).map(([slug, info]) => {
+  const inCategory = products.filter((p) => p.id.startsWith(`${slug}/`));
+  return { slug, ...info, count: inCategory.length, thumb: inCategory[0]?.data.image };
+});
+---
+<ul class="cats">
+  {items.map(({ slug, label, intro, count, thumb }) => (
+    <li class="cat">
+      {thumb && <Image src={thumb} alt="" width={72} height={72} densities={[1, 2]} format="webp" quality={60} fit="contain" />}
+      <div>
+        <h3><a href={`/producten/${slug}/`}>{label}</a></h3>
+        <p>{intro} ({count})</p>
+      </div>
+    </li>
+  ))}
+</ul>

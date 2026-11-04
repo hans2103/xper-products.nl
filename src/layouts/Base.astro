@@ -1,0 +1,101 @@
+---
+import '../styles/global.css';
+import { getImage } from 'astro:assets';
+import { site } from '../config/site';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Consent from '../components/Consent.astro';
+import defaultImage from '../assets/xper-products-verpakking.jpg';
+import logo from '../assets/logo-xper.png';
+
+export interface Crumb { label: string; href: string }
+
+interface Props {
+  title: string;
+  description: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+  type?: 'website' | 'product';
+  breadcrumbs?: Crumb[];
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+
+const { title, description, image = defaultImage, imageAlt = 'Xpèr-verpakking: kwaliteit in onderdelen', type = 'website', breadcrumbs = [], jsonLd = [], noindex = false } = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, site.url).href;
+const pageTitle = title === site.name ? `${site.name}: ${site.tagline.toLowerCase()}` : `${title} | ${site.name}`;
+const ogImage = await getImage({ src: image, width: Math.min(1200, image.width), format: 'jpg', quality: 65 });
+const ogImageUrl = new URL(ogImage.src, site.url).href;
+
+const organization = {
+  '@type': 'Organization',
+  '@id': `${site.url}/#organization`,
+  name: site.name,
+  legalName: site.company.legalName,
+  vatID: site.company.vat,
+  url: site.url,
+  logo: new URL((await getImage({ src: logo, format: 'png' })).src, site.url).href,
+  email: site.company.email,
+  telephone: site.company.phoneIntl,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: site.company.street,
+    postalCode: site.company.postalCode,
+    addressLocality: site.company.city,
+    addressCountry: site.company.country,
+  },
+};
+
+const graph = [
+  organization,
+  breadcrumbs.length > 0 && {
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.label,
+      item: new URL(crumb.href, site.url).href,
+    })),
+  },
+  ...jsonLd,
+].filter(Boolean);
+---
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#0e76bd" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:site_name" content={site.name} />
+    <meta property="og:locale" content="nl_NL" />
+    <meta property="og:type" content={type === 'product' ? 'product' : 'website'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content={imageAlt} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json" set:html={JSON.stringify({ '@context': 'https://schema.org', '@graph': graph })} />
+  </head>
+  <body>
+    <a class="skip-link" href="#inhoud">Naar de inhoud</a>
+    <Header />
+    <main id="inhoud" tabindex="-1">
+      {breadcrumbs.length > 1 && <div class="wrap"><Breadcrumbs items={breadcrumbs} /></div>}
+      <slot />
+    </main>
+    <Footer />
+    <Consent />
+    <script>import '../scripts/consent';</script>
+  </body>
+</html>

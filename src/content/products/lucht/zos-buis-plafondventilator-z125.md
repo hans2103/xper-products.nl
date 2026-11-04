@@ -1,0 +1,29 @@
+---
+title: "ZOS Buis plafondventilator Z125"
+sku: "400-300-0150"
+brand: "ZOS"
+description: "Onze buisventilator met een diameter van 125 mm biedt veelzijdige ventilatie voor elke ruimte in huis, van toiletten en badkamers tot keukens en zelfs…"
+image: "../../../assets/products/400-300-0150.jpg"
+imageAlt: "Witte ronde buisventilator met schoepen naast Xpèr-kaartje"
+orderUrl: "https://www.onderdelenexpert.nl/zos-buis-plafondventilator-125mm-z125-2712501"
+---
+
+Onze buisventilator met een diameter van 125 mm biedt veelzijdige ventilatie voor elke ruimte in huis, van toiletten en badkamers tot keukens en zelfs hele woningen. Met krachtige prestaties en een stille werking zorgt deze ventilator voor frisse lucht en een comfortabele omgeving. Bestel nu voor optimale ventilatie!
+
+Handleiding Z125
+
+Aansluitschema:
+1. Schakel de stroom uit in de groep waar de ventilator gemonteerd wordt.
+2. Draai het schroefje aan de onderzijde van de ventilator los en klik vervolgens het front van de ventilator.
+3. Sluit de ventilator aan op onderstaande manier.
+
+Z125 technische gegevens:
+185m3/h
+16 Watt
+Ventilator snelheid 2400 t.p.m.
+220-240V/50Hz
+Max. Druk 65 p.a.
+Max werk temp. 40gr.
+38dB
+Plaatsing kan tegen plafond of tegen de muur op kanalen met een diameter 125MM.
+(Niet binnen de douchekabine hangen.)

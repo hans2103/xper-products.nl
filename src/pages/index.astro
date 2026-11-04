@@ -1,0 +1,67 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProductTag from '../components/ProductTag.astro';
+import CategoryList from '../components/CategoryList.astro';
+import { site, lowestRackPrice } from '../config/site';
+import rack from '../assets/ondernemers/shop_electra.jpg';
+
+const products = await getCollection('products');
+const racks = (await getCollection('racks')).sort((a, b) => a.data.order - b.data.order);
+const minPrice = lowestRackPrice(racks);
+const picks = ['gas/zos-gasslang-80cm-compleet', 'onderhoud/wpro-ontkalker-wasmachine-250gr', 'stofzuigerzakken/menalux-bsh-type-k', 'electra/zos-overspanningsbeveiliging']
+  .map((id) => products.find((p) => p.id === id))
+  .filter((p) => p !== undefined);
+---
+<Base
+  title={site.name}
+  description={`Xpèr: ${products.length} onderdelen en accessoires voor wasmachine, stofzuiger, gas, water en electra. Te koop bij de vakhandel en online via ${site.shopName}.`}
+>
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <div>
+        <h1 id="hero-title">Het juiste onderdeel hangt al klaar</h1>
+        <p class="lead">Xpèr levert {products.length} onderdelen en accessoires voor huishoudelijke apparaten. Van gasslang tot stofzuigerzak, verpakt en op het schap bij de vakhandel.</p>
+        <div class="actions">
+          <a class="button button--primary" href="/producten/">Zoek een onderdeel</a>
+          <a class="button button--secondary" href="/ondernemers/">Xpèr in uw winkel</a>
+        </div>
+      </div>
+      <figure class="hero-rack">
+        <Image src={rack} alt="Een Xpèr-schap met stekkers, snoeren en schakelaars in blauwe verpakking aan een gaatjeswand" widths={[360, 720]} sizes="(min-width: 56rem) 22rem, 90vw" format="webp" loading="eager" fetchpriority="high" />
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="cats-title">
+    <div class="wrap">
+      <h2 id="cats-title">Waar zoekt u een onderdeel voor?</h2>
+      <CategoryList />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="picks-title" style="padding-top: 0">
+    <div class="wrap">
+      <h2 id="picks-title">Veel gezocht</h2>
+      <ul class="tags">
+        {picks.map((product) => <li><ProductTag product={product} /></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="retail-title" style="padding-top: 0">
+    <div class="wrap panel split">
+      <div>
+        <h2 id="retail-title">Verkoopt u huishoudelijke apparaten?</h2>
+        <p>Met een Xpèr-schap heeft u de onderdelen die klanten het vaakst vragen direct op voorraad. U kiest een schap per productgroep, wij leveren de stelling in bruikleen.</p>
+        <a class="button button--primary" href="/ondernemers/">Bekijk de schappen</a>
+      </div>
+      <ul class="facts">
+        <li><strong>{racks.length} schappen</strong> per productgroep</li>
+        <li><strong>Vanaf € {minPrice}</strong> richtprijs per schap</li>
+        <li><strong>Stelling in bruikleen</strong> in overleg</li>
+      </ul>
+    </div>
+  </section>
+</Base>

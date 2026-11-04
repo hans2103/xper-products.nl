@@ -1,0 +1,82 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/ondernemers/witgoed/",
+      "destination": "/ondernemers/witgoed-onderdelen/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/electra/zos-zekeringen-16a-traag1/",
+      "destination": "/producten/electra/zos-zekeringen-16a-traag/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-stofzak-fjm/",
+      "destination": "/producten/stofzuigerzakken/miele-stofzak-fjm/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-stofzak-gn/",
+      "destination": "/producten/stofzuigerzakken/miele-stofzak-gn/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/lucht/zos-slangklem-16-27mm-rvs-2stuks/",
+      "destination": "/producten/water/zos-slangklem-16-27mm-rvs-2stuks/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/lucht/zos-slangklem-25-40mm-rvs-2stuks/",
+      "destination": "/producten/water/zos-slangklem-25-40mm-rvs-2stuks/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/lucht/zos-slangklem-40-60mm-rvs-2stuks/",
+      "destination": "/producten/water/zos-slangklem-40-60mm-rvs-2stuks/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-filter-aktief-koolfilter-sf-aac30/",
+      "destination": "/producten/stofzuiger-origineel/miele-hepa-filter-sf-ha30/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), interest-cohort=()"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' https://www.googletagmanager.com; img-src 'self' data: https://www.googletagmanager.com https://*.google-analytics.com; connect-src 'self' https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+        }
+      ]
+    },
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

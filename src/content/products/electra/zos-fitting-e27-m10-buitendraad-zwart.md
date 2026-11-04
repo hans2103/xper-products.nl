@@ -1,0 +1,16 @@
+---
+title: "ZOS Fitting E27 M10 buitendraad zwart"
+sku: "400-400-0354"
+brand: "ZOS"
+description: "Ontdek de perfecte combinatie van stijl en functionaliteit met onze zwarte E27 M10 buitendraadfitting."
+image: "../../../assets/products/IMG_5508.jpg"
+imageAlt: "Grote zwarte lampfitting met buitendraad en ring in Xpèr-verpakking"
+orderUrl: "https://www.onderdelenexpert.nl/zos-fitting-e27-m10-buitendraad-zwart-54379"
+---
+
+Ontdek de perfecte combinatie van stijl en functionaliteit met onze zwarte E27 M10 buitendraadfitting. Met zijn strakke ontwerp voegt het een moderne touch toe aan elk interieur. Vervaardigd met precisie voor duurzaamheid en eenvoudige installatie. Verlicht je ruimte met klasse en vertrouwen. Bestel vandaag nog en geef je verlichtingsproject een upgrade.
+
+Gereedschap: Spanningzoeker, Striptang.
+Montage: Bij de montage dient er geen spanning op de kabels te staan.
+In de fitting zit een kinderbeveiliging. Steek hiervoor een spanningszoeker tegen de lip in de fitting en draai de fitting los.
+U kunt de aders het beste strippen op 0.5cm alvorens deze te monteren aan de fitting. Draai de fitting in elkaar zodat de kinderbeveiliging weer sluit.
