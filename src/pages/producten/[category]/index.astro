@@ -1,6 +1,6 @@
 ---
 import type { GetStaticPaths } from 'astro';
-import { getCollection } from 'astro:content';
+import { getProducts } from '../../../lib/products';
 import Base from '../../../layouts/Base.astro';
 import ProductTag from '../../../components/ProductTag.astro';
 import { categories, site } from '../../../config/site';
@@ -9,7 +9,7 @@ export const getStaticPaths = (() => Object.keys(categories).map((category) => (
 
 const { category } = Astro.params;
 const { label, intro } = categories[category];
-const products = (await getCollection('products', (p) => p.id.startsWith(`${category}/`)))
+const products = (await getProducts((p) => p.id.startsWith(`${category}/`)))
   .sort((a, b) => a.data.title.localeCompare(b.data.title, 'nl'));
 const crumbs = [{ label: 'Home', href: '/' }, { label: 'Producten', href: '/producten/' }, { label, href: `/producten/${category}/` }];
 const itemList = {

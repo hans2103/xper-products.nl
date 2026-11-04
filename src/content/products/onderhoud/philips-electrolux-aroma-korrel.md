@@ -6,6 +6,8 @@ description: "Laat je huis heerlijk ruiken met de Philips geurkorrels FC8025/01,
 image: "../../../assets/products/141-395-0102.jpg"
 imageAlt: "Ophangdoosje van Electrolux met kleurrijke geurkorrels op de voorkant"
 orderUrl: "https://www.onderdelenexpert.nl/philips-electrolux-aroma-korrel-s-bag-sfresh"
+# Niet meer leverbaar: verwijderd uit de webshop van onderdelenexpert.nl (2026-11-04, #13).
+active: false
 ---
 
 Laat je huis heerlijk ruiken met de Philips geurkorrels FC8025/01, compatibel met Philips Specialist, Universe, Cityline, Mobilo, Impact en Expression stofzuigers. Met 4 handige zakjes verspreiden ze een bloemige geur tijdens het stofzuigen. Eenvoudig te gebruiken, gewoon strooien en opzuigen. Origineel en betrouwbaar. EAN: 3023372016834.

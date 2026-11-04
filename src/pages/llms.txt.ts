@@ -1,9 +1,10 @@
 import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
+import { getProducts } from '../lib/products';
 import { categories, rackFacts, site } from '../config/site';
 
 export const GET: APIRoute = async () => {
-  const products = await getCollection('products');
+  const products = await getProducts();
   const racks = (await getCollection('racks')).sort((a, b) => a.data.order - b.data.order);
   const { company } = site;
 

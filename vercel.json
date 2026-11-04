@@ -46,6 +46,101 @@
       "source": "/producten/lucht/zos-hoekstuk-eco-220x90mm-horizontaal-150/",
       "destination": "/producten/lucht/zos-hoekstuk-eco-220x90mm-horizontaal-15o/",
       "permanent": true
+    },
+    {
+      "source": "/producten/onderhoud/philips-braun-spuitbus-scheerkopreiniger/",
+      "destination": "/producten/onderhoud/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-turbo-zuigmond-stb205-3/",
+      "destination": "/producten/stofzuiger-origineel/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-radiatorborstel-plintenzuiger/",
+      "destination": "/producten/stofzuiger-origineel/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-pistoolgreep-s215-tm-s300/",
+      "destination": "/producten/stofzuiger-origineel/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-zuigmondje-rode-stip/",
+      "destination": "/producten/stofzuiger-origineel/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-filter-sf-ah50/",
+      "destination": "/producten/stofzuiger-origineel/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-telescoop-buis-3-delig/",
+      "destination": "/producten/stofzuiger-origineel/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/stofzuiger-origineel/miele-parketborsel-sbb300-3/",
+      "destination": "/producten/stofzuiger-origineel/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/onderhoud/philips-electrolux-aroma-korrel/",
+      "destination": "/producten/onderhoud/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/onderhoud/miele-ontkalkingstabletten/",
+      "destination": "/producten/onderhoud/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/onderhoud/miele-ontkalker-stoomoven/",
+      "destination": "/producten/onderhoud/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/onderhoud/miele-geurflacon-cocoon/",
+      "destination": "/producten/onderhoud/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/onderhoud/miele-geurflacon-aqua/",
+      "destination": "/producten/onderhoud/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/onderhoud/miele-reinigingsmiddel/",
+      "destination": "/producten/onderhoud/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/lucht/zos-buisverbinder-220x90mm-eco/",
+      "destination": "/producten/lucht/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/lucht/zos-bevestigingsbeugel-222x89mm-eco/",
+      "destination": "/producten/lucht/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/lucht/zos-overgangsstuk-haaks-o-150mm-220x90mm-eco/",
+      "destination": "/producten/lucht/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/electra/zos-tafeldoos-3v-z-ra-1-5m-wit/",
+      "destination": "/producten/electra/",
+      "permanent": true
+    },
+    {
+      "source": "/producten/onderhoud/severin-waterfilter-zb8699/",
+      "destination": "/producten/onderhoud/",
+      "permanent": true
     }
   ],
   "headers": [
