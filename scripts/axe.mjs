@@ -1,34 +1,20 @@
 // Runs axe-core against the production build (dist/) and fails on serious or critical violations.
 // Uses the same URLs as Lighthouse CI (lighthouserc.json), so both checks cover the same pages.
-import { spawn } from 'node:child_process';
 import { readFile } from 'node:fs/promises';
 import { chromium } from 'playwright';
 import { AxeBuilder } from '@axe-core/playwright';
+import { serveDist } from './serve-dist.mjs';
 
-const PORT = 4322;
-const BASE = `http://localhost:${PORT}`;
 const FAILING_IMPACTS = new Set(['serious', 'critical']);
 
 const lhci = JSON.parse(await readFile(new URL('../lighthouserc.json', import.meta.url), 'utf8'));
 const paths = lhci.ci.collect.url.map((u) => new URL(u).pathname);
 
-const server = spawn('npx', ['astro', 'preview', '--port', String(PORT)], { stdio: 'ignore' });
-const stopServer = () => server.kill();
-
-async function waitForServer() {
-    for (let i = 0; i < 60; i++) {
-        try {
-            if ((await fetch(BASE)).ok) return;
-        } catch {}
-        await new Promise((r) => setTimeout(r, 500));
-    }
-    throw new Error(`Preview server did not start on ${BASE}`);
-}
-
 let failures = 0;
+const server = await serveDist();
+const BASE = server.url;
 const browser = await chromium.launch();
 try {
-    await waitForServer();
     // Reduced motion skips the consent fade-in, so axe measures final colours instead of a half-transparent dialog.
     const page = await (await browser.newContext({ reducedMotion: 'reduce' })).newPage();
     for (const path of paths) {
@@ -48,7 +34,7 @@ try {
     }
 } finally {
     await browser.close();
-    stopServer();
+    await server.close();
 }
 
 if (failures) {
