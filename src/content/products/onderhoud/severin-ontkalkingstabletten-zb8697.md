@@ -1,6 +1,6 @@
 ---
 title: "Severin ontkalkingstabletten ZB8697"
-sku: "600-400-0010"
+sku: "400-600-0010"
 brand: "Severin"
 description: "Onze blisterverpakking met 9 stuks biedt effectieve bescherming tegen verkalking voor Severin S2, S2+ en S3 koffievolautomaten."
 image: "../../../assets/products/400-600-0010.jpg"
