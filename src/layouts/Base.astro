@@ -1,6 +1,6 @@
 ---
 import '../styles/global.css';
-import { getImage } from 'astro:assets';
+import { getImage, Font } from 'astro:assets';
 import { site } from '../config/site';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
@@ -66,6 +66,8 @@ const graph = [
 <html lang="nl">
   <head>
     <meta charset="utf-8" />
+    <Font cssVariable="--font-atkinson" preload />
+    <Font cssVariable="--font-michroma" preload />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />

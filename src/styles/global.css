@@ -1,6 +1,3 @@
-@import '@fontsource-variable/atkinson-hyperlegible-next/wght.css';
-@import '@fontsource/michroma/latin-400.css';
-
 :root {
   /* Brand, sampled from the packaging and the in-store rack. */
   --blue: #0e76bd;
@@ -14,8 +11,8 @@
   --steel: #4d5866;
   --line: #d3d9df;
 
-  --font-display: 'Michroma', 'Arial Black', sans-serif;
-  --font-body: 'Atkinson Hyperlegible Next Variable', system-ui, sans-serif;
+  --font-display: var(--font-michroma);
+  --font-body: var(--font-atkinson);
 
   --step--1: 0.875rem;
   --step-0: 1.0625rem;
