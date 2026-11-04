@@ -6,6 +6,8 @@ description: "Upgrade je Miele stofzuiger met de Turbo borstel STB 205-3 voor op
 image: "../../../assets/products/141-360-0101.jpg"
 imageAlt: "Turbozuigmond in witte doos van Miele met afbeelding van de zuigmond"
 orderUrl: "https://www.onderdelenexpert.nl/miele-turbo-zuigmond-stb305-3-stofzuiger-10455360"
+# Niet meer leverbaar: uitgeschakeld in de webshop van onderdelenexpert.nl (2026-11-04, #13).
+active: false
 ---
 
 Upgrade je Miele stofzuiger met de Turbo borstel STB 205-3 voor optimale reinigingsprestaties. Met een actief draaiende borstelrol die draadjes, pluizen en haren effectief opneemt, garandeert deze borstel een grondige en behoedzame reiniging. Geschikt voor diverse Miele modellen. Kies voor originele Miele onderdelen voor een ongeëvenaard reinigingsresultaat en bescherming van je waardevolle stofzuiger en interieur.

@@ -1,9 +1,9 @@
 ---
 import { Image } from 'astro:assets';
-import { getCollection } from 'astro:content';
+import { getProducts } from '../lib/products';
 import { categories } from '../config/site';
 
-const products = (await getCollection('products')).sort((a, b) => a.id.localeCompare(b.id));
+const products = (await getProducts()).sort((a, b) => a.id.localeCompare(b.id));
 const items = Object.entries(categories).map(([slug, info]) => {
   const inCategory = products.filter((p) => p.id.startsWith(`${slug}/`));
   return { slug, ...info, count: inCategory.length, thumb: inCategory[0]?.data.image };

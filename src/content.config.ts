@@ -13,6 +13,8 @@ const products = defineCollection({
     imageAlt: z.string().optional(),
     orderUrl: z.string().url().optional(),
     photoMayDiffer: z.boolean().default(false),
+    // false hides the product from the site, e.g. when the webshop no longer sells it. See src/lib/products.ts.
+    active: z.boolean().default(true),
   }),
 });
 
