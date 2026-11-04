@@ -146,6 +146,11 @@
       "source": "/producten/onderhoud/krups-reiningingstablet-f055/",
       "destination": "/producten/onderhoud/",
       "permanent": true
+    },
+    {
+      "source": "/ondernemers/lampen-en-batterijen/",
+      "destination": "/ondernemers/",
+      "permanent": true
     }
   ],
   "headers": [
