@@ -1,54 +1,48 @@
-# Starlight Starter Kit: Basics
+# Xpèr Products
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Website van [xper-products.nl](https://www.xper-products.nl): het productoverzicht van het merk Xpèr (Zanden Onderdelen) en informatie voor winkeliers die een Xpèr-schap willen verkopen. Bestellen gebeurt via onderdelenexpert.nl.
 
-```
-pnpm create astro@latest -- --template starlight
-```
+Gebouwd met [Astro](https://astro.build), statisch gehost op Vercel.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/withastro/starlight&create_from_path=examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
+## Commando's
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+| Commando          | Wat het doet                                |
+| :---------------- | :------------------------------------------ |
+| `npm install`     | Dependencies installeren                    |
+| `npm run dev`     | Dev-server op `localhost:4321`              |
+| `npm run build`   | Productiebuild naar `./dist/`               |
+| `npm run preview` | Productiebuild lokaal bekijken              |
 
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
+## Structuur
 
 ```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   └── content.config.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+src/
+├── config/site.ts          bedrijfsgegevens, productgroepen en GTM-id
+├── content/products/<groep>/<slug>.md   één bestand per product
+├── content/racks/*.md      de schappen voor winkeliers
+├── assets/products/        productfoto's (artikelnummer.jpg)
+├── layouts/Base.astro      <head>, SEO, JSON-LD, header en footer
+├── components/             o.a. ProductTag (het "ophangkaartje")
+├── scripts/consent.ts      cookietoestemming; GTM laadt pas na akkoord
+└── pages/                  routes, inclusief llms.txt en robots.txt
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+## Een product toevoegen
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+Maak `src/content/products/<groep>/<slug>.md` aan. De URL wordt `/producten/<groep>/<slug>/`.
 
-Static assets, like favicons, can be placed in the `public/` directory.
+```md
+---
+title: "ZOS Gasslang 80cm compleet"
+sku: "400-200-0005"
+brand: "ZOS"
+description: "Rubberen gasslang van 80 cm met GASTEC QA-keurmerk."   # max. 160 tekens
+image: "../../../assets/products/400-200-0005.jpg"
+imageAlt: "Zwarte gasslang van 80 cm in Xpèr-verpakking"          # optioneel
+orderUrl: "https://www.onderdelenexpert.nl/..."                   # optioneel
+---
 
-## 🧞 Commands
+Productomschrijving in Markdown. Gebruik echte lijsten (`- ` of `1. `).
+```
 
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+Productfoto's worden bij de build automatisch verkleind en naar WebP omgezet. Lever ze aan als JPEG van maximaal 1600 px aan de langste zijde (schapfoto's maximaal 2000 px); groter heeft geen zin en maakt de repository alleen zwaarder.

@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../config/site';
+const { company } = site;
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Contact', href: '/contact/' }];
+const localBusiness = {
+  '@type': 'ContactPage',
+  name: 'Contact',
+  url: `${site.url}/contact/`,
+  about: { '@id': `${site.url}/#organization` },
+};
+---
+<Base title="Contact" description={`Contact met Xpèr Products, ${company.street} in ${company.city}. Bel ${company.phone} of mail ${company.email}.`} breadcrumbs={crumbs} jsonLd={[localBusiness]}>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Contact</h1>
+      <p>Xpèr is een merk van {company.legalName}. Heeft u een vraag over een product, of wilt u Xpèr in uw winkel verkopen? Neem gerust contact op.</p>
+    </header>
+    <div class="split">
+      <section class="panel" aria-labelledby="c-reach">
+        <h2 id="c-reach">Bereikbaar via</h2>
+        <dl class="specs">
+          <dt>Telefoon</dt><dd><a href={`tel:${company.phoneIntl}`}>{company.phone}</a></dd>
+          <dt>E-mail</dt><dd><a href={`mailto:${company.email}`}>{company.email}</a></dd>
+          <dt>Adres</dt><dd><address style="font-style: normal">{company.street}<br />{company.postalCode} {company.city}</address></dd>
+          {company.kvk && <><dt>KvK</dt><dd>{company.kvk}</dd></>}
+          {company.vat && <><dt>Btw</dt><dd>{company.vat}</dd></>}
+        </dl>
+      </section>
+      <section class="panel" aria-labelledby="c-buy">
+        <h2 id="c-buy">Een product kopen</h2>
+        <p>Xpèr-producten zijn te koop bij de vakhandel en online bij <a href={site.shopUrl} rel="noopener">{site.shopName}</a>. Weet u niet welk onderdeel u nodig heeft? Houd het type- en modelnummer van uw apparaat bij de hand, dan helpen we u verder.</p>
+      </section>
+    </div>
+  </div>
+</Base>

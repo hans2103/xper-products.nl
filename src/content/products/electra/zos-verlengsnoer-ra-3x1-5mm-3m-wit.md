@@ -1,0 +1,11 @@
+---
+title: "ZOS Verlengsnoer RA 3X1.5MM 3M Wit"
+sku: "400-400-0184"
+brand: "ZOS"
+description: "Ontdek onze hoogwaardige witte stroomverlengkabel met 3 meter lengte en randaarde voor optimale veiligheid."
+image: "../../../assets/products/400-400-0184.jpg"
+imageAlt: "Opgerold wit verlengsnoer met stekker en contrastekker in Xpèr-verpakking"
+orderUrl: "https://www.onderdelenexpert.nl/zos-verlengsnoer-ra-3x1-5mm-3m-wit-4004000184"
+---
+
+Ontdek onze hoogwaardige witte stroomverlengkabel met 3 meter lengte en randaarde voor optimale veiligheid. Voorzien van één stopcontact met een belastbaar vermogen tot 3500W bij 230/240V en 16A. Betrouwbaar en praktisch, perfect voor thuisgebruik. Essentieel voor het uitbreiden van je stroomnetwerk. Bestel nu voor onmisbare elektrische efficiëntie!

@@ -1,0 +1,37 @@
+---
+// Retention matches GA4 property "Xper-Products" (436844943): event data 2 months, user data 14 months (checked 2026-10-29).
+import Base from '../layouts/Base.astro';
+import { site } from '../config/site';
+const { company } = site;
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Privacyverklaring', href: '/privacy/' }];
+---
+<Base title="Privacyverklaring" description="Welke gegevens Xpèr Products verwerkt als u deze website bezoekt, waarom, en welke rechten u heeft." breadcrumbs={crumbs}>
+  <div class="wrap">
+    <article class="panel prose" style="margin-top: 1.5rem">
+      <h1 style="font-size: var(--step-2)">Privacyverklaring</h1>
+      <p>Deze website is van {company.legalName}, {company.street}, {company.postalCode} {company.city}. Wij zijn verantwoordelijk voor de verwerking van persoonsgegevens via deze site.</p>
+
+      <h2>Welke gegevens we verwerken</h2>
+      <ul>
+        <li><strong>Websitestatistieken.</strong> Alleen als u daar toestemming voor geeft, meten we met Google Analytics (via Google Tag Manager) welke pagina's bezocht worden. Google Analytics geeft uw browser daarvoor een willekeurig ID; we kunnen u daarmee niet persoonlijk herkennen. We gebruiken dit alleen om de site te verbeteren. Advertentie- en personalisatiefuncties staan uit.</li>
+        <li><strong>E-mail en telefoon.</strong> Als u ons mailt of belt, gebruiken we uw gegevens alleen om uw vraag te beantwoorden.</li>
+        <li><strong>Technische gegevens.</strong> Onze hostingpartij Vercel verwerkt IP-adressen kortstondig om de site veilig en bereikbaar te houden.</li>
+      </ul>
+
+      <h2>Doorgifte buiten de EU</h2>
+      <p>Google en Vercel zijn Amerikaanse bedrijven. Gegevens kunnen daardoor in de Verenigde Staten worden verwerkt. Beide bedrijven zijn aangesloten bij het EU-VS Data Privacy Framework, waarmee de Europese Commissie heeft vastgesteld dat de bescherming daar voldoende is.</p>
+
+      <h2>Bestellen</h2>
+      <p>Op deze site kunt u niet bestellen. De bestelknop brengt u naar {site.shopName}; daar geldt de privacyverklaring van die webwinkel.</p>
+
+      <h2>Bewaartermijn</h2>
+      <p>Google Analytics bewaart gegevens over afzonderlijke bezoeken 2 maanden en gegevens die aan het willekeurige ID gekoppeld zijn maximaal 14 maanden. E-mails bewaren we zolang dat nodig is om uw vraag af te handelen.</p>
+
+      <h2>Uw rechten</h2>
+      <p>U kunt ons vragen welke gegevens we van u hebben, en die laten aanpassen of verwijderen. Mail daarvoor naar <a href={`mailto:${company.email}`}>{company.email}</a>. U kunt ook een klacht indienen bij de <a href="https://autoriteitpersoonsgegevens.nl" rel="noopener">Autoriteit Persoonsgegevens</a>.</p>
+
+      <h2>Cookies</h2>
+      <p>Lees op de pagina <a href="/cookies/">cookies</a> welke cookies we gebruiken en hoe u uw keuze wijzigt.</p>
+    </article>
+  </div>
+</Base>

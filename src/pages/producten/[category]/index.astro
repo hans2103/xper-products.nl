@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import ProductTag from '../../../components/ProductTag.astro';
+import { categories, site } from '../../../config/site';
+
+export const getStaticPaths = (() => Object.keys(categories).map((category) => ({ params: { category } }))) satisfies GetStaticPaths;
+
+const { category } = Astro.params;
+const { label, intro } = categories[category];
+const products = (await getCollection('products', (p) => p.id.startsWith(`${category}/`)))
+  .sort((a, b) => a.data.title.localeCompare(b.data.title, 'nl'));
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Producten', href: '/producten/' }, { label, href: `/producten/${category}/` }];
+const itemList = {
+  '@type': 'ItemList',
+  name: label,
+  numberOfItems: products.length,
+  itemListElement: products.map((p, i) => ({ '@type': 'ListItem', position: i + 1, url: new URL(`/producten/${p.id}/`, site.url).href, name: p.data.title })),
+};
+---
+<Base title={label} description={`${intro} ${products.length} producten van Xpèr.`} breadcrumbs={crumbs} jsonLd={[itemList]}>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>{label}</h1>
+      <p>{intro} <span class="muted">{products.length} producten.</span></p>
+    </header>
+    <ul class="tags">
+      {products.map((product) => <li><ProductTag product={product} headingLevel="h2" /></li>)}
+    </ul>
+  </div>
+</Base>

@@ -1,0 +1,96 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { Image, getImage } from 'astro:assets';
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import Base from '../../../layouts/Base.astro';
+import ProductTag from '../../../components/ProductTag.astro';
+import { categories, site } from '../../../config/site';
+
+export const getStaticPaths = (async () => {
+  const products = await getCollection('products');
+  return products.map((product) => {
+    const [category, slug] = product.id.split('/');
+    return { params: { category, slug }, props: { product } };
+  });
+}) satisfies GetStaticPaths;
+
+interface Props { product: CollectionEntry<'products'> }
+const { product } = Astro.props;
+const { category } = Astro.params;
+const { title, sku, brand, description, image, imageAlt, orderUrl, photoMayDiffer } = product.data;
+const { Content } = await render(product);
+const { label } = categories[category];
+const alt = imageAlt ?? `${title}, artikelnummer ${sku}`;
+
+const related = (await getCollection('products', (p) => p.id.startsWith(`${category}/`) && p.id !== product.id))
+  .sort((a, b) => Number(b.data.brand === brand) - Number(a.data.brand === brand) || a.data.title.localeCompare(b.data.title, 'nl'))
+  .slice(0, 4);
+
+const crumbs = [
+  { label: 'Home', href: '/' },
+  { label: 'Producten', href: '/producten/' },
+  { label, href: `/producten/${category}/` },
+  { label: title, href: `/producten/${product.id}/` },
+];
+
+const productImage = await getImage({ src: image, width: Math.min(1200, image.width), format: 'jpg', quality: 65 });
+const productLd = {
+  '@type': 'Product',
+  name: title,
+  sku,
+  mpn: sku,
+  description,
+  category: label,
+  image: new URL(productImage.src, site.url).href,
+  url: new URL(`/producten/${product.id}/`, site.url).href,
+  ...(brand && { brand: { '@type': 'Brand', name: brand } }),
+  manufacturer: { '@id': `${site.url}/#organization` },
+};
+const metaDescription = description.toLowerCase().startsWith(title.toLowerCase().slice(0, 12))
+  ? description
+  : `${title} (${sku}). ${description}`.slice(0, 158).replace(/\s\S*$/, '…');
+---
+<Base title={title} description={metaDescription} image={image} imageAlt={alt} type="product" breadcrumbs={crumbs} jsonLd={[productLd]}>
+  <div class="wrap">
+    <div class="product section" style="padding-top: 1.5rem">
+      <figure class="product__media" style="margin: 0">
+        <Image src={image} alt={alt} widths={[400, 640, 960]} sizes="(min-width: 76rem) 540px, (min-width: 52rem) 42vw, 92vw" format="webp" quality={75} loading="eager" fetchpriority="high" />
+        {photoMayDiffer && <figcaption class="product__note">Het product kan afwijken van de foto.</figcaption>}
+      </figure>
+      <div>
+        <h1 style="font-size: var(--step-2)">{title}</h1>
+        <dl class="specs">
+          <dt>Artikelnummer</dt><dd>{sku}</dd>
+          {brand && <><dt>Merk</dt><dd>{brand}</dd></>}
+          <dt>Productgroep</dt><dd><a href={`/producten/${category}/`}>{label}</a></dd>
+        </dl>
+        <div class="order">
+          {orderUrl ? (
+            <>
+              <a class="button button--primary" href={orderUrl} rel="noopener">
+                Bestellen bij {site.shopName}
+                <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 4h6v6M20 4 10 14M18 14v6H4V6h6" /></svg>
+              </a>
+              <p>U gaat naar de webwinkel {site.shopName}. Ook te koop bij de vakhandel met een Xpèr-schap.</p>
+            </>
+          ) : (
+            <p>Dit product is te koop bij de vakhandel. <a href="/contact/">Vraag ons waar</a>.</p>
+          )}
+        </div>
+        <div class="prose">
+          <h2 style="font-size: var(--step-1); font-family: var(--font-body); font-weight: 700">Productinformatie</h2>
+          <Content />
+        </div>
+      </div>
+    </div>
+
+    {related.length > 0 && (
+      <section aria-labelledby="related-title">
+        <h2 id="related-title">Meer in {label.toLowerCase()}</h2>
+        <ul class="tags">
+          {related.map((p) => <li><ProductTag product={p} /></li>)}
+        </ul>
+      </section>
+    )}
+  </div>
+</Base>

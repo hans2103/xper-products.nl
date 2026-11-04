@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 
+// AI-crawlers mogen de site lezen: productinformatie vindbaar maken in AI-antwoorden is het doel.
 const robotsTxt = `
 User-agent: *
 Allow: /

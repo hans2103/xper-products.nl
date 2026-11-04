@@ -1,0 +1,37 @@
+---
+import { site, categories } from '../config/site';
+const { company } = site;
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <section aria-labelledby="footer-company">
+      <h2 id="footer-company">{site.name}</h2>
+      <p>Xpèr is een merk van {company.legalName}</p>
+      <address>
+        {company.street}<br />
+        {company.postalCode} {company.city}<br />
+        <a href={`tel:${company.phoneIntl}`}>{company.phone}</a><br />
+        <a href={`mailto:${company.email}`}>{company.email}</a>
+      </address>
+      {company.kvk && <p>KvK {company.kvk}{company.vat && <> · btw {company.vat}</>}</p>}
+    </section>
+    <nav aria-labelledby="footer-products">
+      <h2 id="footer-products">Producten</h2>
+      <ul>
+        {Object.entries(categories).map(([slug, { label }]) => <li><a href={`/producten/${slug}/`}>{label}</a></li>)}
+      </ul>
+    </nav>
+    <nav aria-labelledby="footer-info">
+      <h2 id="footer-info">Informatie</h2>
+      <ul>
+        <li><a href="/ondernemers/">Xpèr verkopen in uw winkel</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/privacy/">Privacyverklaring</a></li>
+        <li><a href="/cookies/">Cookies</a></li>
+        <li><button type="button" data-consent-open>Cookievoorkeuren wijzigen</button></li>
+      </ul>
+      <p>&copy; {year} {company.legalName}</p>
+    </nav>
+  </div>
+</footer>

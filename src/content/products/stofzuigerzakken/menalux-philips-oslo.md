@@ -1,0 +1,11 @@
+---
+title: "Menalux Philips Oslo 3200"
+sku: "138-000-3200"
+brand: "Menalux"
+description: "Ontdek onze premium universele stofzakken, compatibel met Nilfisk, Philips, Karstadt, Lloyds, Miostar, Ruton stofzuigers."
+image: "../../../assets/products/138-000-32001.jpg"
+imageAlt: "Rode doos van Menalux met afbeelding van een witte stofzuigerzak"
+orderUrl: "https://www.onderdelenexpert.nl/menalux-stofzak-philips-oslo-3200"
+---
+
+Ontdek onze premium universele stofzakken, compatibel met Nilfisk, Philips, Karstadt, Lloyds, Miostar, Ruton stofzuigers. Elke doos bevat 5 stofzakken, inclusief 1 microfilter en 1 motorfilter voor optimale prestaties. Geschikt voor HR6300, HR6320, HR6340, HR6500, HR6800, HR6371, HR6396, T300, T800, TC400, TC999, TC Exclusive, Classique TCX400, TCX900, Vision, Excel HR8700, HR8999, Vitall V371, V396, Furore, Golden Magic, Marathon, Silence. Upgrade uw stofzuigerervaring vandaag nog!

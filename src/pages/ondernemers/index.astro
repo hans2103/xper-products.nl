@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { site, rackFacts, lowestRackPrice } from '../../config/site';
+
+const racks = (await getCollection('racks')).sort((a, b) => a.data.order - b.data.order);
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Voor winkeliers', href: '/ondernemers/' }];
+---
+<Base title="Xpèr verkopen in uw winkel" description="Een Xpèr-schap in uw winkel: veelgevraagde onderdelen direct op voorraad, lage investering, stelling in bruikleen en ruime marge." breadcrumbs={crumbs}>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Xpèr verkopen in uw winkel</h1>
+      <p class="lead">Klanten vragen dagelijks naar een gasslang, een stofzuigerzak of een nieuwe afvoerpomp. Met een Xpèr-schap heeft u ze direct voor ze klaarliggen.</p>
+    </header>
+
+    <ul class="facts">
+      <li><strong>Lage investering</strong> Richtprijs vanaf € {lowestRackPrice(racks)} per schap.</li>
+      <li><strong>Stelling in bruikleen</strong> In overleg leveren we de stelling erbij.</li>
+      <li><strong>Ruime marge</strong> Een goede marge voor de winkelier op elk product.</li>
+      <li><strong>Hulp bij de start</strong> Begeleidende actie en informatie via de site of persoonlijk contact.</li>
+    </ul>
+
+    <section class="section" aria-labelledby="racks-title">
+      <h2 id="racks-title">Kies een schap</h2>
+      <p class="prose">Elk schap is 255 × 100 × 37 cm en gevuld met een samengesteld pakket. Wilt u een andere indeling? Dan stellen we in overleg een schap op maat samen.</p>
+      <ul class="racks">
+        {racks.map((rack) => (
+          <li class="rack">
+            <Image src={rack.data.image} alt="" widths={[260, 520]} sizes="(min-width: 76rem) 260px, (min-width: 34rem) 45vw, 90vw" format="webp" quality={70} />
+            <div class="rack__body">
+              <h3><a href={`/ondernemers/${rack.id}/`}>{rack.data.title}</a></h3>
+              <p>{rackFacts(rack.data)}</p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="panel split" aria-labelledby="contact-title">
+      <div>
+        <h2 id="contact-title">Interesse?</h2>
+        <p>Vertel ons wat voor winkel u heeft en welke productgroepen u zoekt. We nemen contact op om de mogelijkheden te bespreken.</p>
+      </div>
+      <div>
+        <a class="button button--primary" href={`mailto:${site.company.email}?subject=${encodeURIComponent('Interesse in een Xpèr-schap')}`}>Mail {site.company.email}</a>
+        <p style="margin-top: 1rem">Of bel <a href={`tel:${site.company.phoneIntl}`}>{site.company.phone}</a>.</p>
+      </div>
+    </section>
+  </div>
+</Base>

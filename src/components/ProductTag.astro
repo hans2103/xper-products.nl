@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props { product: CollectionEntry<'products'>; headingLevel?: 'h2' | 'h3' }
+const { product, headingLevel: Heading = 'h3' } = Astro.props;
+const { title, sku, brand, image } = product.data;
+---
+<article class="tag">
+  <div class="tag__header">
+    <span class="tag__brand">{brand ?? 'Xpèr'}</span>
+    <span class="tag__sku"><span class="visually-hidden">Artikelnummer </span>{sku}</span>
+  </div>
+  <div class="tag__media">
+    <Image src={image} alt="" widths={[240, 480]} sizes="(min-width: 76rem) 240px, (min-width: 30rem) 45vw, 90vw" format="webp" quality={70} />
+  </div>
+  <div class="tag__body">
+    <Heading class="tag__title"><a href={`/producten/${product.id}/`}>{title}</a></Heading>
+  </div>
+</article>

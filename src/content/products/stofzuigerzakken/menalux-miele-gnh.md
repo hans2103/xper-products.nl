@@ -1,0 +1,11 @@
+---
+title: "Menalux Miele G/N/H 3101"
+sku: "138-000-3101"
+brand: "Menalux"
+description: "Ontdek de ultieme schoonmaakervaring met onze universele stofzakken voor Miele stofzuigers!"
+image: "../../../assets/products/138-000-31011.jpg"
+imageAlt: "Rode doos van Menalux met witte stofzuigerzak met kartonnen kraag"
+orderUrl: "https://www.onderdelenexpert.nl/menalux-stofzak-4-miele-g-h-n-3101"
+---
+
+Ontdek de ultieme schoonmaakervaring met onze universele stofzakken voor Miele stofzuigers! Elke doos bevat 5 stoffen stofzakken met een microfilter en motorfilter voor optimale prestaties. Compatibel met een breed scala aan modellen, van S227 tot S899 en meer, inclusief Allergy Control, Cat & Dog, en vele anderen.
