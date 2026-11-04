@@ -1,0 +1,25 @@
+---
+title: "Miele turbo zuigmond STB205-3 7250040"
+sku: "141-360-0101"
+brand: "Miele"
+description: "Upgrade je Miele stofzuiger met de Turbo borstel STB 205-3 voor optimale reinigingsprestaties."
+image: "../../../assets/products/141-360-0101.jpg"
+imageAlt: "Turbozuigmond in witte doos van Miele met afbeelding van de zuigmond"
+orderUrl: "https://www.onderdelenexpert.nl/miele-turbo-zuigmond-stb305-3-stofzuiger-10455360"
+---
+
+Upgrade je Miele stofzuiger met de Turbo borstel STB 205-3 voor optimale reinigingsprestaties. Met een actief draaiende borstelrol die draadjes, pluizen en haren effectief opneemt, garandeert deze borstel een grondige en behoedzame reiniging. Geschikt voor diverse Miele modellen. Kies voor originele Miele onderdelen voor een ongeëvenaard reinigingsresultaat en bescherming van je waardevolle stofzuiger en interieur.
+
+Geschikt voor:
+
+S 8000 &#8211; S 8999
+S 6000 &#8211; S 6999
+S 5000 &#8211; S 5999
+S 4000 &#8211; S 4999
+S 2000 &#8211; S 2999
+S 300 vanaf serienummer 43/XXXXXXXXXX, zie onderzijde stofzuiger
+
+Voor een optimaal resultaat van uw Miele stofzuiger raden wij originele Miele onderdelen aan.
+De perfecte pasvorm en aansluiting op de Miele stofzuiger zorgen ervoor dat het optimale reinigingsresultaat bereikt wordt zonder schade toe te brengen aan uw kostbare stofzuiger, omgevingshygiëne of meubilair.
+Miele Origineel: 7250040
+EAN: 4002514467467

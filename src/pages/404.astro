@@ -1,0 +1,16 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Pagina niet gevonden" description="Deze pagina bestaat niet (meer)." noindex>
+  <div class="wrap">
+    <section class="panel prose" style="margin-top: 2rem">
+      <h1 style="font-size: var(--step-2)">Dit onderdeel hangt hier niet</h1>
+      <p>De pagina die u zoekt bestaat niet (meer). Misschien is het product verplaatst of uit het assortiment.</p>
+      <form action="/producten/" class="search">
+        <label for="q404">Zoek een onderdeel</label>
+        <input id="q404" name="q" type="search" placeholder="Naam, merk of artikelnummer" />
+        <button class="button button--primary" type="submit" style="justify-self: start">Zoeken</button>
+      </form>
+    </section>
+  </div>
+</Base>

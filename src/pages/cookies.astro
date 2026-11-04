@@ -1,0 +1,21 @@
+---
+// _ga lifetime is the GA4 default (2 years); data retention is described on /privacy/.
+import Base from '../layouts/Base.astro';
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Cookies', href: '/cookies/' }];
+---
+<Base title="Cookies" description="Welke cookies Xpèr Products gebruikt en hoe u uw toestemming wijzigt." breadcrumbs={crumbs}>
+  <div class="wrap">
+    <article class="panel prose" style="margin-top: 1.5rem">
+      <h1 style="font-size: var(--step-2)">Cookies</h1>
+      <p>We plaatsen alleen cookies voor statistieken als u daar toestemming voor geeft. Zonder toestemming laadt Google Tag Manager niet en wordt er niets naar Google gestuurd.</p>
+      <h2>Wat we opslaan</h2>
+      <dl class="specs">
+        <dt>xper-consent</dt><dd style="font-weight: 400">Uw keuze in de cookiemelding. Opgeslagen in uw browser (localStorage), niet bij ons.</dd>
+        <dt>_ga, _ga_*</dt><dd style="font-weight: 400">Google Analytics, alleen na toestemming. Een willekeurig ID om bezoeken te tellen, zonder u persoonlijk te herkennen. Het cookie verloopt na 2 jaar.</dd>
+      </dl>
+      <h2>Uw keuze wijzigen</h2>
+      <p>U kunt uw keuze op elk moment aanpassen.</p>
+      <button class="button button--secondary" type="button" data-consent-open>Cookievoorkeuren wijzigen</button>
+    </article>
+  </div>
+</Base>

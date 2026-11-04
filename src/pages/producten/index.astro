@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CategoryList from '../../components/CategoryList.astro';
+import { categories } from '../../config/site';
+
+const products = (await getCollection('products')).sort((a, b) => a.data.title.localeCompare(b.data.title, 'nl'));
+const index = products.map((p) => ({
+  t: p.data.title,
+  s: p.data.sku,
+  b: p.data.brand ?? '',
+  c: categories[p.id.split('/')[0]]?.label ?? '',
+  u: `/producten/${p.id}/`,
+}));
+const crumbs = [{ label: 'Home', href: '/' }, { label: 'Producten', href: '/producten/' }];
+---
+<Base title="Producten" description={`Alle ${products.length} Xpèr-onderdelen op een rij. Zoek op naam, merk, type of artikelnummer, of kies een productgroep.`} breadcrumbs={crumbs}>
+  <div class="wrap">
+    <header class="page-head">
+      <h1>Producten</h1>
+      <p>Zoek op apparaat, merk, type of artikelnummer. Of kies hieronder een productgroep.</p>
+    </header>
+
+    <search class="panel" style="display:block">
+      <form class="search" action="/producten/">
+        <label for="q">Zoek een onderdeel</label>
+        <input id="q" name="q" type="search" autocomplete="off" placeholder="Bijvoorbeeld: Miele filter, gasslang of 138-000-1803" aria-describedby="q-status" />
+      </form>
+      <p id="q-status" class="muted" role="status" aria-live="polite" style="margin: 0.75rem 0 0"></p>
+      <ul class="search-results" id="q-results"></ul>
+    </search>
+
+    <section class="section" aria-labelledby="groups">
+      <h2 id="groups">Productgroepen</h2>
+      <CategoryList />
+    </section>
+  </div>
+  <script type="application/json" id="product-index" set:html={JSON.stringify(index)} />
+</Base>
+
+<script>
+  type Item = { t: string; s: string; b: string; c: string; u: string };
+  const data: Item[] = JSON.parse(document.getElementById('product-index')!.textContent!);
+  const input = document.getElementById('q') as HTMLInputElement;
+  const list = document.getElementById('q-results')!;
+  const status = document.getElementById('q-status')!;
+  const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  const haystack = data.map((d) => norm(`${d.t} ${d.s} ${d.s.replace(/-/g, '')} ${d.b} ${d.c}`));
+
+  function render() {
+    const terms = norm(input.value).split(/\s+/).filter(Boolean);
+    list.replaceChildren();
+    if (terms.length === 0) { status.textContent = ''; return; }
+    const hits = data.filter((_, i) => terms.every((t) => haystack[i].includes(t)));
+    status.textContent = hits.length === 0
+      ? 'Geen onderdelen gevonden. Probeer een ander woord of alleen het merk.'
+      : `${hits.length} ${hits.length === 1 ? 'onderdeel' : 'onderdelen'} gevonden`;
+    for (const hit of hits.slice(0, 50)) {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = hit.u;
+      a.textContent = hit.t;
+      const meta = document.createElement('span');
+      meta.textContent = `${hit.c} · ${hit.s}`;
+      a.append(meta);
+      li.append(a);
+      list.append(li);
+    }
+  }
+
+  input.form!.addEventListener('submit', (event) => event.preventDefault());
+  const fromUrl = new URLSearchParams(location.search).get('q');
+  if (fromUrl) { input.value = fromUrl; render(); }
+  input.addEventListener('input', () => {
+    render();
+    const url = new URL(location.href);
+    input.value ? url.searchParams.set('q', input.value) : url.searchParams.delete('q');
+    history.replaceState(null, '', url);
+  });
+</script>
