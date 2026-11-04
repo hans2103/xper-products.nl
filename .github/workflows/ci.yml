@@ -17,6 +17,10 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run build
+      - name: axe (serious/critical violations fail the build)
+        run: |
+          npx playwright install --with-deps chromium
+          npm run axe
       - name: Lighthouse (accessibility, SEO, best practices, performance)
         uses: treosh/lighthouse-ci-action@v12
         with:
