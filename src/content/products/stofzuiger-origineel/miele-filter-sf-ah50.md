@@ -1,5 +1,5 @@
 ---
-title: "Miele filter SF-AH50 9616280"
+title: "Miele filter SF-HA50 9616280"
 sku: "141-360-0279"
 brand: "Miele"
 description: "Ons HEPA AirClean-filter SF-HA 50 is essentieel voor een frisse en gezonde leefomgeving."
