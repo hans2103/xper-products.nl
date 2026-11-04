@@ -2,10 +2,10 @@
 title: "Samsung Filter Amerikaanse koelkast"
 sku: "116-410-0101"
 brand: "Samsung"
-description: "Optimaliseer de kwaliteit van je water met onze interne waterfilter, speciaal ontworpen voor Amerikaanse koelkasten."
+description: "Wpro-waterfilter voor in de koelkast, voor Samsung Amerikaanse koelkasten. Vervangt DA29-00003A en DA29-00003B."
 image: "../../../assets/products/116-410-0101.jpg"
 imageAlt: "Witte waterfilter met rode puntvormige dop en Wpro-logo"
 orderUrl: "https://www.onderdelenexpert.nl/wpro-samsung-waterfilter-in-kast-rc25-da2900003b"
 ---
 
-Optimaliseer de kwaliteit van je water met onze interne waterfilter, speciaal ontworpen voor Amerikaanse koelkasten. Met een levensduur van ongeveer 6 maanden biedt de Whirlpool 481281729632 (SBS002) filter zuiver, verfrissend water direct uit je koelkast. Geniet van helderheid en gemak met elke slok. Bestel vandaag voor een gezondere levensstijl!
+Waterfilter van Wpro dat in de koelkast wordt geplaatst, voor Samsung Amerikaanse koelkasten. Het filter zuivert het water dat de koelkast gebruikt, zoals voor de waterdispenser. Het vervangt de Samsung-filters DA29-00003A, DA29-00003B en DA61-00159A en past onder andere in de RS21FCNS, RS23FCMS en RS25FAMS. Wpro-nummer: 484000000513.
