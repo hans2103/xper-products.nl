@@ -17,6 +17,19 @@ jobs:
       - run: npm ci
       - run: npm run check
       - run: npm run build
+      - name: Internal links (broken links fail the build)
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: --offline --root-dir ${{ github.workspace }}/dist --no-progress 'dist/**/*.html'
+          jobSummary: false
+      - name: External links (report only, see job summary)
+        uses: lycheeverse/lychee-action@v2
+        continue-on-error: true
+        with:
+          # The 404 page links to its own canonical URL, which correctly answers 404.
+          args: --root-dir ${{ github.workspace }}/dist --exclude '^file://' --exclude-path dist/404.html --max-concurrency 8 --no-progress 'dist/**/*.html'
+          fail: true
+          jobSummary: true
       - name: axe (serious/critical violations fail the build)
         run: |
           npx playwright install --with-deps chromium
