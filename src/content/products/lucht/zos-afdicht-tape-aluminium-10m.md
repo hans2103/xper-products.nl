@@ -1,5 +1,5 @@
 ---
-title: "ZOS Afdicht tape aluminium 10M"
+title: "ZOS Afdicht tape aluminium 50M"
 sku: "400-400-0161"
 brand: "ZOS"
 description: "Onze aluminium afdichtingstape, 50 meter lang, is de perfecte oplossing voor afdichtingsuitdagingen binnen en buiten."

@@ -141,6 +141,11 @@
       "source": "/producten/onderhoud/severin-waterfilter-zb8699/",
       "destination": "/producten/onderhoud/",
       "permanent": true
+    },
+    {
+      "source": "/producten/onderhoud/krups-reiningingstablet-f055/",
+      "destination": "/producten/onderhoud/",
+      "permanent": true
     }
   ],
   "headers": [

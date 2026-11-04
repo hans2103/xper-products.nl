@@ -2,13 +2,13 @@
 title: "ZOS Fitting E14 haakse beugel zwart"
 sku: "400-400-0352"
 brand: "ZOS"
-description: "Ontdek de perfecte combinatie van stijl en functionaliteit met onze zwarte E14 M10 buitendraadfitting."
+description: "Zwarte E14-lampfitting met haakse metalen beugel, om op een plaat of in een armatuur te monteren."
 image: "../../../assets/products/400-400-0352.jpg"
 imageAlt: "Zwarte cilindervormige kunststof lampfitting in Xpèr-ophangverpakking"
 orderUrl: "https://www.onderdelenexpert.nl/zos-fitting-e14-haakse-beugel-zwart-54347"
 ---
 
-Ontdek de perfecte combinatie van stijl en functionaliteit met onze zwarte E14 M10 buitendraadfitting. Met zijn strakke ontwerp voegt het een moderne touch toe aan elk interieur. Vervaardigd met precisie voor duurzaamheid en eenvoudige installatie. Verlicht je ruimte met klasse en vertrouwen. Bestel vandaag nog en geef je verlichtingsproject een upgrade.
+Zwarte E14-lampfitting van ZOS met een haakse metalen beugel. Met de beugel monteer je de fitting op een plaat of in een armatuur, bijvoorbeeld in een lamp of lichtbak.
 
 Gereedschap: Spanningzoeker, Striptang.
 Montage: Bij de montage dient er geen spanning op de kabels te staan.
